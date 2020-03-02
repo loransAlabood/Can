@@ -10,18 +10,30 @@ var io = socket(server);                 // I start a socket and I give it the s
 
 io.sockets.on ('connection', newConnection);        // setting up a connection event function
 
-
 function newConnection(socket) {                   // create a new socket everytime there is a connection
 
     console.log ('new connetion: ' + socket.id);     // print the id of socket cloent
                // when receive mesege called 'mouse', trigger function called MouseMsg
               // just printing data
-    socket.on('mouse', mouseMsg)          ;
+    socket.on('mouse', mouseMsg);
+
 
     
 }
 
 function mouseMsg (data) {
 
-    console.log(data);
+   this.broadcast.emit ('mouse', data);
+   // console.log(data);
+       
 }
+
+
+
+
+
+
+
+
+
+// this.broadcast.emit ('mouse', data); 
