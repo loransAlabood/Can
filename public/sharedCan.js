@@ -6,10 +6,7 @@ function setup() {
   background(102);
   socket = io.connect('http://localhost:3000');
   socket.on ('mouse', newDrawing);
-  
-  r = random(255);
-g = random(255);
-b = random(255);
+
   
 }
 
@@ -23,9 +20,10 @@ function newDrawing (data) {
 
 
 function mouseDragged () {            
+  
 
   noStroke ();
-  fill (r, g, b);
+  fill (10, 30, 200);
   ellipse (mouseX, mouseY, 36,36);
   
 
@@ -54,18 +52,3 @@ function draw() {
 
 
 
-
-//socket.on('mouse', newDrawing);
-
-
-//  r = random(255);
-//g = random(255);
-// b = random(255);
-
-//function newDrawing (data){
-
-  //noStroke ();
-  //fill (r, g, b);
-  //ellipse (data.x, data.y, 36,36);
-
-//}
