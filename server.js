@@ -33,7 +33,3 @@ function mouseMsg (data) {
 
 
 
-
-
-
-// this.broadcast.emit ('mouse', data); 
